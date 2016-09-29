@@ -1,0 +1,36 @@
+.bar rect {
+    fill: steelblue;
+    shape-rendering: crispEdges;
+}
+
+.bar text {
+    fill: #fff;
+    font: 12px sans-serif;
+}
+
+.axis path, line{
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font: 10px sans-serif;
+}
+
+.btn {
+    border: 1px solid;
+    border-radius: 25%;
+}
+
+.btn.btn-default {
+    margin-right: 5px;
+}
+
+.btn.btn-default:hover {
+    background: #73a9df;
+}
+
+.btn.btn-default.btn-primary{
+    background: #30588e;
+}
