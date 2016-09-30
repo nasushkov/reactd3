@@ -28,7 +28,7 @@ export default class Histogram extends Component{
         this.histogram
             .value(props.value)
             .domain(this.yScale.domain())
-            .thresholds(this.yScale.ticks(20))
+            .thresholds(this.props.bins)
 
         const bars = this.histogram(props.data)
 
@@ -72,6 +72,7 @@ export default class Histogram extends Component{
                           bottomMargin={bottomMargin}
                           axisMargin={axisMargin}
                           height={height}
+                          scale={this.yScale}
                           data={bars}
                     />
                 </g>

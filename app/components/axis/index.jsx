@@ -6,9 +6,9 @@ import {scaleLinear, axisLeft, max, select} from 'd3'
 export default class Axis extends Component {
     constructor(props) {
         super(props)
-        this.yScale = scaleLinear()
-        this.axis = axisLeft(this.yScale)
-            .tickFormat(d => '$' + this.yScale.tickFormat()(d))
+       
+        this.axis = axisLeft(this.props.scale)
+            .tickFormat(d => '$' + this.props.scale.tickFormat()(d))
         this.update_d3(props);
     }
 
@@ -16,10 +16,7 @@ export default class Axis extends Component {
         this.update_d3(newProps)
     }
 
-    update_d3({data, height, topMargin, bottomMargin}){
-        this.yScale
-            .domain([0, max(data, d => d.x1)])
-            .range([0, height - topMargin + bottomMargin])
+    update_d3({data, height, topMargin, bottomMargin}){       
 
         this.axis
             .ticks(data.length)
